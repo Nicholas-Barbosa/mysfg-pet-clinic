@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>guru.springframework</groupId>
 	<artifactId>mysfg-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 
 	<modules>
@@ -45,7 +45,7 @@
 	</build>
 	<scm>
 		<developerConnection>scm:git:https://github.com/Nicholas-Barbosa/mysfg-pet-clinic.git</developerConnection>
-	  <tag>mysfg-pet-clinic-0.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 </project>
