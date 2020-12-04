@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>guru.springframework</groupId>
 	<artifactId>mysfg-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 
 	<modules>
@@ -41,14 +41,12 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goals>install</goals>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
 		<developerConnection>scm:git:https://github.com/Nicholas-Barbosa/mysfg-pet-clinic.git</developerConnection>
-		<tag>HEAD</tag>
 	</scm>
 
 </project>
