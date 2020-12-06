@@ -44,11 +44,12 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git:https://github.com/Nicholas-Barbosa/mysfg-pet-clinic.git</developerConnection>
-		<tag>HEAD</tag>
+		<developerConnection>scm:git:git@github.com:Nicholas-Barbosa/mysfg-pet-clinic.git</developerConnection>
+
 	</scm>
 
 </project>
