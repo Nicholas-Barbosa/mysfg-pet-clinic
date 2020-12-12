@@ -7,8 +7,6 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.VetService;
-import guru.springframework.sfgpetclinic.services.map.OwnerServiceMap;
-import guru.springframework.sfgpetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -16,9 +14,10 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		 vetService = new VetServiceMap();
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override
@@ -27,28 +26,31 @@ public class DataLoader implements CommandLineRunner {
 		owner1.setId(1l);
 		owner1.setFirstName("Nicholas");
 		owner1.setSecondName("Barbosa");
-		
+
 		ownerService.save(owner1);
-		
+
 		Owner owner2 = new Owner();
 		owner2.setId(2l);
 		owner2.setFirstName("Katia");
 		owner2.setSecondName("Barbosa");
-		
+
 		ownerService.save(owner2);
-		
+
 		System.out.println("Loaded Owners...");
-		
+
 		Vet vet1 = new Vet();
 		vet1.setId(1l);
 		vet1.setFirstName("Sam");
 		vet1.setSecondName("Axe");
-		
+
+		vetService.save(vet1);
+
 		Vet vet2 = new Vet();
 		vet2.setId(2l);
 		vet2.setFirstName("Paolo");
 		vet2.setSecondName("Rossi");
-		
+
+		vetService.save(vet2);
 		System.out.println("Loaded Vets...");
 	}
 
