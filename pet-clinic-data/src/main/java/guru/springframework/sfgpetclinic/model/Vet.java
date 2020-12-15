@@ -11,13 +11,9 @@ public class Vet extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vet(Set<Speciality> specialities) {
-		super();
-		this.specialities = specialities;
-	}
-
 	public Set<Speciality> getSpecialities() {
 		return specialities;
 	}
 
+	
 }
