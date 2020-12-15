@@ -15,6 +15,7 @@
 				<th style="width: 150px;">Id</th>
 				<th style="width: 150px;">First Name</th>
 				<th style="width: 150px;">Last Name</th>
+				<th style="width: 150px;">City</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,6 +23,7 @@
 				<td th:text="${owner.id}"></td>
 				<td th:text="${owner.firstName}"></td>
 				<td th:text="${owner.secondName}"></td>
+				<td th:text="${owner.address}+ ', ' +${owner.city}"></td>
 			</tr>
 		</tbody>
 	</table>
