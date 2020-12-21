@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.model.Speciality;
+import guru.springframework.sfgpetclinic.model.Specialty;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
@@ -54,13 +54,13 @@ public class DataLoader implements CommandLineRunner {
 
 		System.out.println("Loaded Pets types...");
 
-		Speciality radiology = new Speciality("Radiology");
+		Specialty radiology = new Specialty("Radiology");
 		specialityService.save(radiology);
 
-		Speciality surgery = new Speciality("Surgery");
+		Specialty surgery = new Specialty("Surgery");
 		specialityService.save(surgery);
 
-		Speciality dentistry = new Speciality("Dentistry");
+		Specialty dentistry = new Specialty("Dentistry");
 		specialityService.save(dentistry);
 
 		Owner owner1 = new Owner("123 Brickerel", "Honolulu", "9292");
@@ -85,7 +85,7 @@ public class DataLoader implements CommandLineRunner {
 		vet1.setFirstName("Sam");
 		vet1.setSecondName("Axe");
 		vet1.getSpecialities().add(radiology);
-		vet1.getSpecialities().add(new Speciality("Anesthetist"));
+		vet1.getSpecialities().add(new Specialty("Anesthetist"));
 		vetService.save(vet1);
 
 		Vet vet2 = new Vet();

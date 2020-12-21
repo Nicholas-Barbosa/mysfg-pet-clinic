@@ -6,12 +6,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "especialities")
-public class Speciality extends BaseEntity {
+public class Specialty extends BaseEntity {
 
 	@Column(name = "description")
 	private String description;
 
-	public Speciality(String description) {
+	public Specialty(String description) {
 		super();
 		this.description = description;
 	}
