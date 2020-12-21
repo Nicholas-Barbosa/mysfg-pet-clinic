@@ -1,30 +1,36 @@
 package guru.springframework.sfgpetclinic.model;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity {
 
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	
+
 	@ManyToOne
-	@JoinColumn(name="type_id")
+	@JoinColumn(name = "type_id")
 	private PetType petType;
-	
+
 	@ManyToOne
-	@JoinColumn(name="onwer_id")
+	@JoinColumn(name = "onwer_id")
 	private Owner owner;
-	
-	@Column(name="birth_date")
+
+	@Column(name = "birth_date")
 	private LocalDate birthDate;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+	private Set<Visit> visits;
 
 	public Pet() {
 		// TODO Auto-generated constructor stub
@@ -57,4 +63,9 @@ public class Pet extends BaseEntity {
 	public String getName() {
 		return name;
 	}
+
+	public Set<Visit> getVisits() {
+		return visits;
+	}
+
 }
