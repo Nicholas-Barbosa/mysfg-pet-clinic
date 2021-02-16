@@ -10,23 +10,33 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="owners")
+@Table(name = "owners")
 public class Owner extends Person {
 
-	@Column(name="address")
+	@Column(name = "address")
 	private String address;
-	
-	@Column(name="city")
+
+	@Column(name = "city")
 	private String city;
-	
-	@Column(name="telephone")
+
+	@Column(name = "telephone")
 	private String telephone;
-	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets = new HashSet<>();
 
 	public Owner() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Owner(Long id, String address, String city, String telephone,String lastName) {
+		super();
+		ownerId(id);
+		ownerLastName(lastName);
+		this.address = address;
+		this.city = city;
+		this.telephone = telephone;
+
 	}
 
 	public Owner(String address, String city, String telephone) {
@@ -52,4 +62,10 @@ public class Owner extends Person {
 		return pets;
 	}
 
+	public final void ownerId(Long id) {
+		super.setId(id);
+	}
+	public final void ownerLastName(String name) {
+		super.setSecondName(name);
+	}
 }
